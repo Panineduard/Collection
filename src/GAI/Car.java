@@ -21,7 +21,7 @@ public class Car {
         return brand;
     }
 
-    private void setBrand(String brand) {
+    public void setBrand(String brand) {
         this.brand = brand;
     }
 
@@ -29,7 +29,7 @@ public class Car {
         return model;
     }
 
-    private void setModel(String model) {
+    public void setModel(String model) {
         this.model = model;
     }
 
@@ -37,7 +37,7 @@ public class Car {
         return releaseDate;
     }
 
-    private void setReleaseDate(Integer year,Integer month,Integer day) {
+    public void setReleaseDate(Integer year,Integer month,Integer day) {
 
         Calendar c = Calendar.getInstance();
         c.add(Calendar.YEAR, -year);
@@ -51,7 +51,7 @@ public class Car {
         return inspectionDate;
     }
 
-    private void setInspectionDate(Integer year,Integer month,Integer day) {
+    public void setInspectionDate(Integer year,Integer month,Integer day) {
         Calendar c = Calendar.getInstance();
         c.add(Calendar.YEAR,-year);
         c.add(Calendar.MONTH, month);
@@ -64,7 +64,7 @@ public class Car {
         return namber;
     }
 
-    private void setNamber(String namber) {
+    public void setNamber(String namber) {
         this.namber = namber;
     }
 
@@ -72,33 +72,18 @@ public class Car {
         return accidents;
     }
 
-    private void setAccidents(Integer accidents) {
+    public void setAccidents(Integer accidents) {
         this.accidents = accidents;
     }
 
-    private static List<Car> CARS=new ArrayList<>();
+
 
     @Override
     public String toString(){
         return "Namber  - "+namber+"  DTP  - "+accidents;
     }//+"Inspection date  - "+format.format(inspectionDate)
 
-    static {
-    Random random = new Random();
+   
 
-    for (int i = 0; i <= 30; i++) {
-        Car car = new Car();
-        car.setBrand("Brand" + i);
-        car.setModel("Model" + i);
-        car.setNamber("AX" + random.nextInt(9999) + "AC   ");
-        car.setAccidents(random.nextInt(2));
-        car.setInspectionDate(random.nextInt(4), random.nextInt(12), random.nextInt(30));
-        car.setReleaseDate(random.nextInt(15), random.nextInt(12), random.nextInt(30));
-        CARS.add(i,car);
-    }
-}
-    public List<Car> getCars(){
-        return CARS;
-    }
 
 }

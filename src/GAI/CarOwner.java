@@ -1,5 +1,9 @@
 package GAI;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -26,11 +30,11 @@ private  List<String> NAMES=new ArrayList<>();
        NAMES =list;
     }
 
-    private void setTheListOfOffenses(List<Offenses> theListOfOffenses) {
+    public void setTheListOfOffenses(List<Offenses> theListOfOffenses) {
         this.theListOfOffenses = theListOfOffenses;
     }
 
-    private void setQuantityCars(Integer quantityCars) {
+    public void setQuantityCars(Integer quantityCars) {
         this.quantityCars = quantityCars;
     }
 
@@ -42,7 +46,7 @@ private  List<String> NAMES=new ArrayList<>();
         return individualID;
     }
 
-    private void setIndividualID(Integer individualID) {
+    public void setIndividualID(Integer individualID) {
         this.individualID = individualID;
     }
 
@@ -50,7 +54,7 @@ private  List<String> NAMES=new ArrayList<>();
         return name;
     }
 
-    private void setName(String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
@@ -58,7 +62,7 @@ private  List<String> NAMES=new ArrayList<>();
         return firstname;
     }
 
-    private void setFirstname(String firstname) {
+    public void setFirstname(String firstname) {
         this.firstname = firstname;
     }
 
@@ -66,7 +70,7 @@ private  List<String> NAMES=new ArrayList<>();
         return lastname;
     }
 
-    private void setLastname(String lastname) {
+    public void setLastname(String lastname) {
         this.lastname = lastname;
     }
 
@@ -74,7 +78,7 @@ private  List<String> NAMES=new ArrayList<>();
         return yearOfBbirth;
     }
 
-    private void setYearOfBbirth(Integer yearOfBbirth) {
+    public void setYearOfBbirth(Integer yearOfBbirth) {
         this.yearOfBbirth = yearOfBbirth;
     }
 
@@ -82,7 +86,7 @@ private  List<String> NAMES=new ArrayList<>();
         return passportSeries;
     }
 
-    private void setPassportSeries(String passportSeries) {
+    public void setPassportSeries(String passportSeries) {
         this.passportSeries = passportSeries;
     }
 
@@ -90,7 +94,7 @@ private  List<String> NAMES=new ArrayList<>();
         return passportNamber;
     }
 
-    private void setPassportNamber(Integer passportNamber) {
+    public void setPassportNamber(Integer passportNamber) {
         this.passportNamber = passportNamber;
     }
 
@@ -98,7 +102,7 @@ private  List<String> NAMES=new ArrayList<>();
         return dateIssuanceOfPassports;
     }
 
-    private void setDateIssuanceOfPassports(Integer year,Integer month,Integer day) {
+    public void setDateIssuanceOfPassports(Integer year,Integer month,Integer day) {
         Calendar c = Calendar.getInstance();
         c.add(Calendar.YEAR, -year);
         c.add(Calendar.MONTH, month);
@@ -110,7 +114,7 @@ private  List<String> NAMES=new ArrayList<>();
         return adress;
     }
 
-    private void setAdress(String adress) {
+    public void setAdress(String adress) {
         this.adress = adress;
     }
 
@@ -118,7 +122,7 @@ private  List<String> NAMES=new ArrayList<>();
         return driver_sLicenseNumber;
     }
 
-    private void setDriver_sLicenseNumber(Integer driver_sLicenseNumber) {
+    public void setDriver_sLicenseNumber(Integer driver_sLicenseNumber) {
         this.driver_sLicenseNumber = driver_sLicenseNumber;
     }
 
@@ -126,7 +130,7 @@ private  List<String> NAMES=new ArrayList<>();
         return categoryDrivingLicense;
     }
 
-    private void setCategoryDrivingLicense(String categoryDrivingLicense) {
+    public void setCategoryDrivingLicense(String categoryDrivingLicense) {
         this.categoryDrivingLicense = categoryDrivingLicense;
     }
 
@@ -134,53 +138,11 @@ private  List<String> NAMES=new ArrayList<>();
         return theListOfOffenses;
     }
 
-    private void setTheListOfOffenses(Offenses ofOffenses) {
+    public void setTheListOfOffenses(Offenses ofOffenses) {
         theListOfOffenses.add(ofOffenses);
        }
-
     @Override
     public String toString(){
-        return "Name  - "+name+ "  Offenses - "+theListOfOffenses;
+        return "Name  - "+name+ "  Offenses - "+theListOfOffenses+"  ID- "+individualID;
     }
-    private static List<CarOwner> CAR_OWNER = new ArrayList<>();
-
-public CarOwner getOwnerById(Integer id){
-    for (CarOwner carOwner:CAR_OWNER){
-        if (carOwner.getIndividualID()==id){return carOwner;}
-    }
-
-    return null;
-}
-   static {
-       List<Offenses> offenses=new ArrayList<>();
-       List<Offenses> randomOffenses=new ArrayList<>();
-       for (Offenses i:Offenses.values()){
-           offenses.add(i);
-       }
-           Random random = new Random();
-       for (int i = 0; i <= 10; i++) {
-           CarOwner carOwner = new CarOwner();
-           carOwner.setQuantityCars(random.nextInt(4));
-           carOwner.setIndividualID(i);
-           carOwner.setName("Owner" + i);
-           carOwner.setLastname("OwnerLastName" + i);
-           carOwner.setFirstname("OwnerFirstName" + i);
-           carOwner.setYearOfBbirth(1940 + random.nextInt(70));
-          for (int k=0;k<random.nextInt(2);){
-              randomOffenses.add(offenses.get(random.nextInt(6)));
-          }
-           carOwner.setTheListOfOffenses(new ArrayList<Offenses>(randomOffenses));
-           randomOffenses.clear();
-           carOwner.setPassportSeries("P" + random.nextInt(10));
-           carOwner.setPassportNamber(1000 + random.nextInt(10000));
-           carOwner.setAdress("Kharkov" + i);
-           carOwner.setDriver_sLicenseNumber(random.nextInt(30));
-           carOwner.setCategoryDrivingLicense("A" + i);
-           carOwner.setDateIssuanceOfPassports(random.nextInt(75), random.nextInt(12), random.nextInt(30));
-           CAR_OWNER.add(i, carOwner);
-       }
-   }
-    public List<CarOwner> getCarsOwners () {
-           return CAR_OWNER;
-       }
    }
