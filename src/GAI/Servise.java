@@ -5,19 +5,24 @@ import java.util.*;
 /**
  * Created by Эдуард on 01.07.15.
  */
-public class Servise {
+public class Servise implements Runnable {
+
+    public void run()		//Этот метод будет выполняться в побочном потоке
+    {
+        Builder s=new Builder();
+        System.out.println(s.getCarsOwners());
+    }
     //поиск информации о транспортных средствах, зарегистрированных на данного автовладельца (поиск осуществлять по фамилии);
     public List<Car> SearchByName(String name){
         Registration registration=new Registration();
         registration.getRegistration();
         List<Car>list;
         Builder owner =new Builder();
-        System.out.println(name);
         int ID=0;
         for (CarOwner carOwner:owner.getCarsOwners()){
             if(carOwner.getName().contains(name)){
                 ID=carOwner.getIndividualID();
-                System.out.println(carOwner.getIndividualID());
+
             }
         }
         if(ID==0){ System.out.println("Incorrect name!!!");
