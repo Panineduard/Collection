@@ -17,6 +17,18 @@ public class Car {
     private String namber;
     private Integer accidents =0;
 
+
+    private Integer idCar=0;
+
+
+    public Integer getIdCar() {
+        return idCar;
+    }
+
+    public void setIdCar(Integer idCar) {
+        this.idCar = idCar;
+    }
+
     public String getBrand() {
         return brand;
     }
