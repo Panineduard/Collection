@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+<CarOwners>
+    <CarOwner>
+        <id>1</id>
+        <name>Igor</name>
+        <firstname>Aleksandrovich</firstname>
+        <lastname>Fuzi</lastname>
+        <yearOfBbirth>1983</yearOfBbirth>
+        <passportSeries>MK</passportSeries>
+        <passportNamber>163565</passportNamber>
+        <dateIssuanceOfPassports>12,04,1995</dateIssuanceOfPassports>
+        <adress>danilevskogo 2</adress>
+        <driver_sLicenseNumber>32322</driver_sLicenseNumber>
+        <categoryDrivingLicense>B</categoryDrivingLicense>
+        <theListOfOffenses>
+            <offence>OVERSPEED</offence>
+            <offence>SEAT_BELTS</offence>
+        </theListOfOffenses>
+    </CarOwner>
+    <CarOwner>
+        <id>2</id>
+        <name>Sergey</name>
+        <firstname>Aleksandrovich</firstname>
+        <lastname>Druz</lastname>
+        <yearOfBbirth>1983</yearOfBbirth>
+        <passportSeries>MK</passportSeries>
+        <passportNamber>163435</passportNamber>
+        <dateIssuanceOfPassports>12,04,1995</dateIssuanceOfPassports>
+        <adress>danilevskogo 1</adress>
+        <driver_sLicenseNumber>43434</driver_sLicenseNumber>
+        <categoryDrivingLicense>B</categoryDrivingLicense>
+        <theListOfOffenses>
+            <offence>OVERSPEED</offence>
+            </theListOfOffenses>
+    </CarOwner>
+    <CarOwner>
+        <id>3</id>
+        <name>Andrey</name>
+        <firstname>Aleksandrovich</firstname>
+        <lastname>Dort</lastname>
+        <yearOfBbirth>1979</yearOfBbirth>
+        <passportSeries>MK</passportSeries>
+        <passportNamber>344435</passportNamber>
+        <dateIssuanceOfPassports>12,04,1993</dateIssuanceOfPassports>
+        <adress>danilevskogo 3</adress>
+        <driver_sLicenseNumber>43767</driver_sLicenseNumber>
+        <categoryDrivingLicense>B</categoryDrivingLicense>
+        <theListOfOffenses>
+            <offence>SEAT_BELTS</offence>
+           </theListOfOffenses>
+       </CarOwner>
+    <CarOwner>
+        <id>4</id>
+        <name>Vasiliy</name>
+        <firstname>Aleksandrovich</firstname>
+        <lastname>Pdf</lastname>
+        <yearOfBbirth>1987</yearOfBbirth>
+        <passportSeries>MK</passportSeries>
+        <passportNamber>1645435</passportNamber>
+        <dateIssuanceOfPassports>12,04,1990</dateIssuanceOfPassports>
+        <adress>danilevskogo 9</adress>
+        <driver_sLicenseNumber>65756</driver_sLicenseNumber>
+        <categoryDrivingLicense>B</categoryDrivingLicense>
+        <theListOfOffenses>
+            <offence>DRUNK_DRIVER</offence>
+            <offence>OTHER</offence>
+            </theListOfOffenses>
+
+    </CarOwner>
+    <CarOwner >
+        <id>5</id>
+        <name>Aleksey</name>
+        <firstname>Aleksandrovich</firstname>
+        <lastname>Voloshko</lastname>
+        <yearOfBbirth>1980</yearOfBbirth>
+        <passportSeries>MK</passportSeries>
+        <passportNamber>163768</passportNamber>
+        <dateIssuanceOfPassports>12,04,1989</dateIssuanceOfPassports>
+        <adress>danilevskogo 10</adress>
+        <driver_sLicenseNumber>43466</driver_sLicenseNumber>
+        <categoryDrivingLicense>B</categoryDrivingLicense>
+        <theListOfOffenses>
+            <offence>RUNNING_A_RED_LIGHT</offence>
+        </theListOfOffenses>
+    </CarOwner>
+    <CarOwner>
+        <id>6</id>
+        <name>Konstantin</name>
+        <firstname>Aleksandrovich</firstname>
+        <lastname>Vasilchenko</lastname>
+        <yearOfBbirth>1976</yearOfBbirth>
+        <passportSeries>MK</passportSeries>
+        <passportNamber>163325</passportNamber>
+        <dateIssuanceOfPassports>12,04,1990</dateIssuanceOfPassports>
+        <adress>danilevskogo 11</adress>
+        <driver_sLicenseNumber>46534</driver_sLicenseNumber>
+        <categoryDrivingLicense>B</categoryDrivingLicense>
+        <theListOfOffenses>
+            <offence>FAULTY_CAR</offence>
+        </theListOfOffenses>
+    </CarOwner>
+    <CarOwner>
+        <id>7</id>
+        <name>Evgeniy</name>
+        <firstname>Aleksandrovich</firstname>
+        <lastname>Chenko</lastname>
+        <yearOfBbirth>1972</yearOfBbirth>
+        <passportSeries>MK</passportSeries>
+        <passportNamber>163325</passportNamber>
+        <dateIssuanceOfPassports>12,04,1989</dateIssuanceOfPassports>
+        <adress>danilevskogo 12</adress>
+        <driver_sLicenseNumber>46534</driver_sLicenseNumber>
+        <categoryDrivingLicense>B</categoryDrivingLicense>
+        <theListOfOffenses>
+            <offence>FAULTY_CAR</offence>
+        </theListOfOffenses>
+    </CarOwner>
+    <CarOwner>
+        <id>8</id>
+        <name>Rich</name>
+        <firstname>Aleksandrovich</firstname>
+        <lastname>Kole</lastname>
+        <yearOfBbirth>1976</yearOfBbirth>
+        <passportSeries>MK</passportSeries>
+        <passportNamber>163325</passportNamber>
+        <dateIssuanceOfPassports>12,04,1990</dateIssuanceOfPassports>
+        <adress>danilevskogo 13</adress>
+        <driver_sLicenseNumber>46534</driver_sLicenseNumber>
+        <categoryDrivingLicense>B</categoryDrivingLicense>
+        <theListOfOffenses>
+            <offence>SEAT_BELTS</offence>
+            </theListOfOffenses>
+    </CarOwner>
+</CarOwners>
