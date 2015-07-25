@@ -30,7 +30,7 @@ public class Server{
             out.writeUTF(standartMessage);
             out.flush();
 
-            Thread threadServise = new Thread(servise);
+//            Thread threadServise = new Thread(servise);
 
             while(true) {
                 line = in.readUTF(); // ожидаем пока клиент пришлет строку текста.

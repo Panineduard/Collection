@@ -1,5 +1,9 @@
 package GAI;
 
+import org.xml.sax.SAXException;
+
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.IOException;
 import java.util.*;
 
 /**
@@ -9,41 +13,58 @@ public class Servise implements Runnable {
 
     public void run()		//Этот метод будет выполняться в побочном потоке
     {
-        Builder s=new Builder();
-        System.out.println(s.getCarsOwners());
+//        Servise servise = new Servise();
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.println("SearchByNamber");
+//        System.out.println("Input namber");
+//        String options=null;
+//        if (scanner.hasNext()) {
+//            options = (String)scanner.next();
+//        } else System.out.println("Incorrect number of retry");
+//        System.out.println(options);
+//        try {
+//
+//
+////            System.out.println(servise.SearchByNamber(options));
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        } catch (SAXException e) {
+//            e.printStackTrace();
+//        } catch (ParserConfigurationException e) {
+//            e.printStackTrace();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
     }
     //поиск информации о транспортных средствах, зарегистрированных на данного автовладельца (поиск осуществлять по фамилии);
-    public List<Car> SearchByName(String name){
-        Registration registration=new Registration();
-        registration.getRegistration();
+    public List<Car> SearchByName(String name) throws InterruptedException, IOException, SAXException, ParserConfigurationException {
         List<Car>list;
-        Builder owner =new Builder();
+        Helper owner =new Helper();
+        owner.getRegistration();
         int ID=0;
-        for (CarOwner carOwner:owner.getCarsOwners()){
-            if(carOwner.getName().contains(name)){
-                ID=carOwner.getIndividualID();
+        String name1=name.replaceAll(" ","");
+        for (CarOwner carOwner:owner.getCarsOwners()){//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+
+            if(name1.contains(carOwner.getName())){
+
+                ID=carOwner.getIndividualID();
             }
         }
         if(ID==0){ System.out.println("Incorrect name!!!");
             return null;
         }
-        list=registration.getRegistration().get(ID);
+        list=owner.getRegistration().get(ID);
         return list;
     }
     //поиск информации о владельце по части номерного знака;
-    public List<CarOwner> SearchByNamber(String namber){
-        Car car =new Car();
+    public List<CarOwner> SearchByNamber(String namber) throws InterruptedException, IOException, SAXException, ParserConfigurationException {
         List<CarOwner> searchOwners=new ArrayList<>();
-        Car searchingCar=new Car();
-Registration registration=new Registration();
-        Integer id=0;
-        Builder carOwner=new Builder();
+        Helper carOwner=new Helper();
         for (Car car1:carOwner.getCars()) {
             if (car1.getNamber().contains(namber)) {
-                searchingCar = car1;
-                for (int i=1;i<registration.getRegistration().size();i++){
-                    for (Car c : registration.getRegistration().get(i)) {
+                for (int i=1;i<carOwner.getRegistration().size();i++){
+                    for (Car c : carOwner.getRegistration().get(i)) {
                         if (c==car1) {
                             searchOwners.add(carOwner.getOwnerById(i));
                         }}}}}
@@ -52,7 +73,7 @@ Registration registration=new Registration();
 
     //вывод информации о всех транспортных средствах, вовремя не прошедших ТО;
     public HashSet<Car> notTtimelyServise(Integer k){
-        Builder car =new Builder();
+        Helper car =new Helper();
         HashSet<Car> searchCars=new HashSet<>();
         Date date;
         Calendar c = Calendar.getInstance();
@@ -64,9 +85,9 @@ Registration registration=new Registration();
         return searchCars;
     }
     // вывод информации о всех автовладельцах, которые управляли транспортом в нетрезвом виде;
-    public HashSet<CarOwner> whoViolated(Offenses of) {
+    public HashSet<CarOwner> whoViolated(Offenses of) throws InterruptedException, ParserConfigurationException, SAXException, IOException {
         HashSet<CarOwner> owners = new HashSet<>();
-        Builder carOwner = new Builder();
+        Helper carOwner = new Helper();
         for (CarOwner carOwn :carOwner.getCarsOwners()){
             for (Offenses offenses:carOwn.getTheListOfOffenses()){
                 if(of.equals(offenses))owners.add(carOwn);
@@ -76,7 +97,7 @@ Registration registration=new Registration();
     }
     //вывод информации о всех транспортных средствах, участвовавших в ДТП.
     public HashSet<Car> carsAccident(){
-        Builder car =new Builder();
+        Helper car =new Helper();
         HashSet<Car> cars=new HashSet<>();
         for (Car car1:car.getCars()){
             if(car1.getAccidents()>=1)cars.add(car1);
